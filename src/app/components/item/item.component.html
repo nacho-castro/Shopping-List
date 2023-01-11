@@ -1,0 +1,27 @@
+<div class="row" [ngClass]="{'completed': item.completed}">
+
+    <div class="title">
+        <input 
+            type="checkbox"
+            [checked]="item.completed"
+            (change)="onToggle(item)"
+        >
+        {{item.title | uppercase}}
+    </div>
+
+    <div class="price">
+        {{item.price | currency}}
+    </div>
+
+    <div class="quantity">
+        {{item.quantity}}
+    </div>
+
+    <div class="total">
+        {{(item.price * item.quantity) | currency}}
+    </div>
+    
+    <div class="actions">
+        <button (click)="onDelete(item)">Eliminar</button>
+    </div>
+</div>
