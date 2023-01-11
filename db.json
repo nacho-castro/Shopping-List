@@ -1,25 +1,25 @@
 {
-    "items": [
-        {
-            "id": 0,
-            "title": "manzana",
-            "price": 10,
-            "quantity": 4,
-            "completed": false
-        },
-        {
-            "id": 1,
-            "title": "pera",
-            "price": 3.5,
-            "quantity": 8,
-            "completed": true
-        },
-        {
-            "id": 2,
-            "title": "campera",
-            "price": 200,
-            "quantity": 1,
-            "completed": true
-        }
-    ]
+  "items": [
+    {
+      "id": 0,
+      "title": "manzana",
+      "price": 10,
+      "quantity": 4,
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "banana",
+      "price": 5,
+      "quantity": 3,
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "durazno",
+      "price": 2,
+      "quantity": 6,
+      "completed": false
+    }
+  ]
 }
