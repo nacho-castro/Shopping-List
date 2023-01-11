@@ -1,44 +1,68 @@
-.row{
+.row {
     display: flex;
     box-sizing: border-box;
+    align-items: center;
 }
 
-.completed{
-    color: #ccc;
-    border-left: 2px solid green;
-    text-decoration: line-through;
-}
-.completed .total{
-    color: #ccc;
+.row:hover {
+    border-radius: 3px;
+    background: #eee;
 }
 
-
-div{
+div {
     padding: 5px 0;
 }
-.title{
+
+.completed {
+    color: #ddd;
+    text-decoration: line-through;
+}
+
+.title {
     display: flex;
     width: 50%;
     padding: 0 5px;
 }
-.price{
+
+.price {
     width: 15%;
     padding: 0 5px;
 }
-.quantity{
+
+.quantity {
     width: 10%;
     padding: 0 5px;
 }
 
-.total{
+.completed .total {
+    color: #ddd;
+
+}
+
+.total {
     width: 15%;
     font-weight: bolder;
     color: green;
     padding: 0 5px;
 }
-.actions{
+
+.actions {
     width: 10%;
     text-align: center;
     box-sizing: border-box;
     padding: 0 5px;
+}
+
+.actions button{
+    border: none;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.actions button:hover{
+    background-color: darkred;
 }

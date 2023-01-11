@@ -16,16 +16,12 @@ export class ItemsComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.itemService.getItems().subscribe(items => {
-      this.items = items
+    this.itemService.getItems().subscribe(data => {
+      this.items = data;
+      this.getTotal(); 
     });
-  }
 
-  deleteItem(item: Item) {
-    this.itemService.deleteItem(item)
-      .subscribe(() => {
-        this.items = this.items.filter(t => t.id !== t.id)
-      })
+    
   }
 
   getTotal() {
@@ -34,4 +30,31 @@ export class ItemsComponent implements OnInit {
       .map(item => item.quantity * item.price)
       .reduce((acc, item) => acc += item, 0);
   }
+
+  deleteItem(item: Item) {
+    this.itemService.deleteItem(item)
+      .subscribe(() => {
+        this.items = this.items.filter(i => i.id !== item.id)
+        this.getTotal();
+      })
+
+    
+  }
+
+  toggleItem(item: Item) {
+    item.completed = !item.completed;
+    this.itemService.updateToggleItem(item).subscribe();
+    this.getTotal();
+  }
+
+  addItem(item: Item) {
+    this.itemService.addItem(item).subscribe(item => {
+      this.items.push(item)
+      this.getTotal();
+    });
+
+    
+  }
+
+
 }

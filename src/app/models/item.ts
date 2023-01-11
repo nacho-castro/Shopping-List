@@ -1,7 +1,7 @@
-export interface Item {
+export class Item {
     id?: number;
-    title: string;
-    price: number;
-    quantity: number;
-    completed: boolean;
+    title: string = '';
+    price: number = 0;
+    quantity: number = 0;
+    completed: boolean = false;
 }

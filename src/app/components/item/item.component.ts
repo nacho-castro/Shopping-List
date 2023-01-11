@@ -9,8 +9,8 @@ import { Item } from 'src/app/models/item';
 export class ItemComponent implements OnInit {
   
   @Input() item: any;
-  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
-  @Output() toggleItem: EventEmitter<Item> = new EventEmitter()
+  @Output() onDeleteItem: EventEmitter<Item> = new EventEmitter();
+  @Output() onToggleItem: EventEmitter<Item> = new EventEmitter()
 
   constructor() { }
 
@@ -19,12 +19,11 @@ export class ItemComponent implements OnInit {
   }
 
   onDelete(item: Item){
-    this.deleteItem.emit(item);
+    this.onDeleteItem.emit(item);
   }
 
   onToggle(item: Item){
-    this.toggleItem.emit(item);
-    item.completed = !item.completed;
+    this.onToggleItem.emit(item);
   }
 
 }
